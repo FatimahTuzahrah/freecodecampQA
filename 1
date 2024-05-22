@@ -1,27 +1,5 @@
-function assertIsNull(value) {
-    if (value !== null) {
-        throw new Error('Value is not null');
-    }
-}
+// isNull assertion in Jest
+expect(value).toBeNull();
 
-function assertIsNotNull(value) {
-    if (value === null) {
-        throw new Error('Value is null');
-    }
-}
-
-// Example usage
-try {
-    assertIsNull(value); // Replace 'value' with the variable to be checked
-    console.log('Value is null');
-} catch (error) {
-    console.error(error.message);
-}
-
-try {
-    assertIsNotNull(value); // Replace 'value' with the variable to be checked
-    console.log('Value is not null');
-} catch (error) {
-    console.error(error.message);
-}
-
+// isNotNull assertion in Jest
+expect(value).not.toBeNull();
