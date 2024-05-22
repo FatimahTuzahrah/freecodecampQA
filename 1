@@ -1,6 +1,27 @@
-var assert = chai.assert;
-assert(foo) // will pass for any truthy value (!= null,!= undefined,!= '',!= 0)
-// or
-assert(foo != null)
-// or
-assert.notEqual(foo, null);
+function assertIsNull(value) {
+    if (value !== null) {
+        throw new Error('Value is not null');
+    }
+}
+
+function assertIsNotNull(value) {
+    if (value === null) {
+        throw new Error('Value is null');
+    }
+}
+
+// Example usage
+try {
+    assertIsNull(value); // Replace 'value' with the variable to be checked
+    console.log('Value is null');
+} catch (error) {
+    console.error(error.message);
+}
+
+try {
+    assertIsNotNull(value); // Replace 'value' with the variable to be checked
+    console.log('Value is not null');
+} catch (error) {
+    console.error(error.message);
+}
+
